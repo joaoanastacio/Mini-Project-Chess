@@ -22,14 +22,116 @@ public class King extends Piece{
 
     @Override
     public void showAvailableMovements(Position position) {
-        // 2d array for king's full range of movement
-        Integer [][] availableMovesKing = {{0,1,2},{0,1,2},{0,1,2}};
-        for (int i = 0; i < 2; i ++){
-            for (int j = 0; j < 2; j ++){
-                String availableMove = String.valueOf(availableMovesKing[i][j]);
-                super.availableMovements.add(availableMove);
-            }
+        String availableMove;
+
+        if (super.position.getColumn() == 0 && super.position.getRow() == 0){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
         }
+
+        if (super.position.getColumn() == 7 && super.position.getRow() == 0){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getColumn() == 0 && super.position.getRow() == 7){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getColumn() == 7 && super.position.getRow() == 7){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getColumn() == 0 && super.position.getRow() > 0 && super.position.getRow() < 7){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getColumn() == 7 && super.position.getRow() > 0 && super.position.getRow() < 7){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getRow() == 7 && super.position.getColumn() < 7 && super.position.getColumn() > 0){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getRow() == 0 && super.position.getColumn() < 7 && super.position.getColumn() > 0){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+        }
+
+        if (super.position.getColumn() > 0 && super.position.getColumn() < 7 &&
+                super.position.getRow() > 0 && super.position.getRow() < 7){
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow() + 1));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn()) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()));
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) + 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() - 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+            availableMove = String.valueOf((super.position.getColumn() + 1) + (super.position.getRow()) - 1);
+            super.availableMovements.add(availableMove);
+        }
+
         System.out.println(String.format("Possible moves for %d%d:\n",
             position.getRow(), position.getColumn()) + super.availableMovements);
     }
