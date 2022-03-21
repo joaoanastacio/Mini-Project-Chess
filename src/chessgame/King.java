@@ -22,7 +22,6 @@ public class King extends Piece{
 
     @Override
     public void showAvailableMovements(Position position) {
-        // 2d array for king's full range of movement
         String availableMove;
 
         if (super.position.getColumn() == 0 && super.position.getRow() == 0){
